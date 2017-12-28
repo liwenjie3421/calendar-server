@@ -1,0 +1,17 @@
+{
+  "name": "calendar-server",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "egg-bin dev"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "egg": "^2.2.0"
+  },
+  "devDependencies": {
+    "egg-bin": "^4.3.7"
+  }
+}
