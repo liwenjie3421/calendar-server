@@ -1,9 +1,10 @@
 const Controller = require('egg').Controller;
 
+const {returnSuccess, returnError} = require('../../lib/plugin/response');
 class HomeController extends Controller {
-  async index() {
-    this.ctx.body = 'Hello world';
-  }
+    async calendarInfo() {
+       this.ctx.body = 123;
+    }
 }
 
 module.exports = HomeController;
