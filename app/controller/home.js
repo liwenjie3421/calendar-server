@@ -32,8 +32,14 @@ class HomeController extends Controller {
         }
     }
 
-    saveCalendarInfo({monthPicker, info}) {
+    saveCalendarInfo(monthPicker, info) {
+        const filepath = path.join(__dirname, '../../db.json');
+        const dbdata = JSON.parse(fs.readFileSync(filepath, {encoding: 'utf-8'}) || '{}');
+        dbdata[monthPicker] = info;
+        
+        const r = fs.writeFileSync(filepath, JSON.stringify(dbdata), {encoding: 'utf-8'});
 
+        this.returnResult(r);
     }
 
     noValidateParams() {
