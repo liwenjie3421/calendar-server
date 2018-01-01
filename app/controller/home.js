@@ -9,7 +9,7 @@ class HomeController extends Controller {
         const {body: params} = this.ctx.request;
         const {monthPicker, type, info} = params;
         const dbpath = path.join(__dirname, '../../db.json');
-        if(!fs.existsSync(dbpath)) {
+        if (!fs.existsSync(dbpath)) {
             fs.writeFileSync(dbpath, '', {encoding: 'utf-8'});
         }
 
