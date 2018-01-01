@@ -8,6 +8,10 @@ class HomeController extends Controller {
     async calendarInfo() {
         const {body: params} = this.ctx.request;
         const {monthPicker, type, info} = params;
+        const dbpath = path.join(__dirname, '../../db.json');
+        if(!fs.existsSync(dbpath)) {
+            fs.writeFileSync(dbpath, '', {encoding: 'utf-8'});
+        }
 
         if (type === 'get') {
             this.getCalendarInfo(monthPicker);
