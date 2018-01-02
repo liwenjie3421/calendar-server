@@ -1,7 +1,7 @@
 const Controller = require('egg').Controller;
 const fs = require('fs');
 const path = require('path');
-const moment = require('../../lib/plugin/moment');
+const moment = require('moment');
 
 const {returnSuccess, returnError} = require('../../lib/plugin/response');
 class HomeController extends Controller {
