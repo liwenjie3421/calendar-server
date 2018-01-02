@@ -1430,6 +1430,15 @@ dot-case@^2.1.0:
   dependencies:
     no-case "^2.2.0"
 
+duplexify@^3.1.2:
+  version "3.5.1"
+  resolved "http://registry.npm.taobao.org/duplexify/download/duplexify-3.5.1.tgz#4e1516be68838bc90a49994f0b39a6e5960befcd"
+  dependencies:
+    end-of-stream "^1.0.0"
+    inherits "^2.0.1"
+    readable-stream "^2.0.0"
+    stream-shift "^1.0.0"
+
 eastasianwidth@^0.1.1:
   version "0.1.1"
   resolved "http://registry.npm.taobao.org/eastasianwidth/download/eastasianwidth-0.1.1.tgz#44d656de9da415694467335365fb3147b8572b7c"
@@ -1579,6 +1588,19 @@ egg-schedule@^3.1.0:
     is-type-of "^1.2.0"
     safe-timers "^1.1.0"
 
+egg-scripts@^2.5.0:
+  version "2.5.0"
+  resolved "http://registry.npm.taobao.org/egg-scripts/download/egg-scripts-2.5.0.tgz#b15a643106fedb35371110d076460ea196cd153a"
+  dependencies:
+    common-bin "^2.7.1"
+    egg-utils "^2.3.0"
+    moment "^2.19.2"
+    mz "^2.7.0"
+    mz-modules "^2.0.0"
+    node-homedir "^1.1.0"
+    runscript "^1.3.0"
+    zlogger "^1.1.0"
+
 egg-security@^2.0.0:
   version "2.0.0"
   resolved "http://registry.npm.taobao.org/egg-security/download/egg-security-2.0.0.tgz#6362e2dcc0d4927b40dbcd9c8b55a62a89373479"
@@ -1702,6 +1724,12 @@ empower@^1.2.3:
   dependencies:
     core-js "^2.0.0"
     empower-core "^0.6.2"
+
+end-of-stream@^1.0.0, end-of-stream@^1.1.0:
+  version "1.4.0"
+  resolved "http://registry.npm.taobao.org/end-of-stream/download/end-of-stream-1.4.0.tgz#7a90d833efda6cfa6eac0f4949dbb0fad3a63206"
+  dependencies:
+    once "^1.4.0"
 
 error-ex@^1.2.0:
   version "1.3.1"
@@ -2238,7 +2266,7 @@ inflight@^1.0.4:
     once "^1.3.0"
     wrappy "1"
 
-inherits@2, inherits@2.0.3, inherits@~2.0.1, inherits@~2.0.3:
+inherits@2, inherits@2.0.3, inherits@^2.0.1, inherits@~2.0.1, inherits@~2.0.3:
   version "2.0.3"
   resolved "http://registry.npm.taobao.org/inherits/download/inherits-2.0.3.tgz#633c2c83e3da42a502f52466022480f4208261de"
 
@@ -2378,7 +2406,7 @@ is-stream@^1.1.0:
   version "1.1.0"
   resolved "http://registry.npm.taobao.org/is-stream/download/is-stream-1.1.0.tgz#12d4a3dd4e68e0b79ceb8dbc84173ae80d91ca44"
 
-is-type-of@^1.0.0, is-type-of@^1.2.0:
+is-type-of@^1.0.0, is-type-of@^1.1.0, is-type-of@^1.2.0:
   version "1.2.0"
   resolved "http://registry.npm.taobao.org/is-type-of/download/is-type-of-1.2.0.tgz#b553cbb4621adf5b4171e8883f370e7a6ec38995"
   dependencies:
@@ -2820,7 +2848,7 @@ moment-timezone@^0.5.0:
   dependencies:
     moment ">= 2.9.0"
 
-"moment@>= 2.9.0", moment@^2.19.3, moment@^2.20.1:
+"moment@>= 2.9.0", moment@^2.19.2, moment@^2.19.3, moment@^2.20.1:
   version "2.20.1"
   resolved "http://registry.npm.taobao.org/moment/download/moment-2.20.1.tgz#d6eb1a46cbcc14a2b2f9434112c1ff8907f313fd"
 
@@ -2967,7 +2995,7 @@ on-finished@^2.1.0:
   dependencies:
     ee-first "1.1.1"
 
-once@^1.3.0, once@^1.4.0:
+once@^1.3.0, once@^1.3.1, once@^1.4.0:
   version "1.4.0"
   resolved "http://registry.npm.taobao.org/once/download/once-1.4.0.tgz#583b1aa775961d4b113ac17d9c50baef9dd76bd1"
   dependencies:
@@ -3306,6 +3334,21 @@ pseudomap@^1.0.2:
   version "1.0.2"
   resolved "http://registry.npm.taobao.org/pseudomap/download/pseudomap-1.0.2.tgz#f052a28da70e618917ef0a8ac34c1ae5a68286b3"
 
+pump@^1.0.0:
+  version "1.0.3"
+  resolved "http://registry.npm.taobao.org/pump/download/pump-1.0.3.tgz#5dfe8311c33bbf6fc18261f9f34702c47c08a954"
+  dependencies:
+    end-of-stream "^1.1.0"
+    once "^1.3.1"
+
+pumpify@^1.3.5:
+  version "1.3.5"
+  resolved "http://registry.npm.taobao.org/pumpify/download/pumpify-1.3.5.tgz#1b671c619940abcaeac0ad0e3a3c164be760993b"
+  dependencies:
+    duplexify "^3.1.2"
+    inherits "^2.0.1"
+    pump "^1.0.0"
+
 qs@^6.4.0:
   version "6.5.1"
   resolved "http://registry.npm.taobao.org/qs/download/qs-6.5.1.tgz#349cdf6eef89ec45c12d7d5eb3fc0c870343a6d8"
@@ -3369,7 +3412,7 @@ readable-stream@1.1.x:
     isarray "0.0.1"
     string_decoder "~0.10.x"
 
-readable-stream@2, readable-stream@^2.1.5:
+readable-stream@2, readable-stream@^2.0.0, readable-stream@^2.1.5:
   version "2.3.3"
   resolved "http://registry.npm.taobao.org/readable-stream/download/readable-stream-2.3.3.tgz#368f2512d79f9d46fdfc71349ae7878bbc1eb95c"
   dependencies:
@@ -3482,6 +3525,13 @@ rimraf@^2.5.4, rimraf@^2.6.1, rimraf@^2.6.2:
 rndm@1.2.0, rndm@^1.2.0:
   version "1.2.0"
   resolved "http://registry.npm.taobao.org/rndm/download/rndm-1.2.0.tgz#f33fe9cfb52bbfd520aa18323bc65db110a1b76c"
+
+runscript@^1.3.0:
+  version "1.3.0"
+  resolved "http://registry.npm.taobao.org/runscript/download/runscript-1.3.0.tgz#291e77cbe23580c00ea7c0eb1d208fac86aa1306"
+  dependencies:
+    debug "^2.6.8"
+    is-type-of "^1.1.0"
 
 safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "5.1.1"
@@ -3650,6 +3700,12 @@ spdx-license-ids@^1.0.2:
   version "1.2.2"
   resolved "http://registry.npm.taobao.org/spdx-license-ids/download/spdx-license-ids-1.2.2.tgz#c9df7a3424594ade6bd11900d596696dc06bac57"
 
+split2@^2.1.0:
+  version "2.2.0"
+  resolved "http://registry.npm.taobao.org/split2/download/split2-2.2.0.tgz#186b2575bcf83e85b7d18465756238ee4ee42493"
+  dependencies:
+    through2 "^2.0.2"
+
 stack-trace@^0.0.10:
   version "0.0.10"
   resolved "http://registry.npm.taobao.org/stack-trace/download/stack-trace-0.0.10.tgz#547c70b347e8d32b4e108ea1a2a159e5fdde19c0"
@@ -3657,6 +3713,10 @@ stack-trace@^0.0.10:
 "statuses@>= 1.3.1 < 2", statuses@^1.2.0, statuses@^1.3.1:
   version "1.4.0"
   resolved "http://registry.npm.taobao.org/statuses/download/statuses-1.4.0.tgz#bb73d446da2796106efcc1b601a253d6c46bd087"
+
+stream-shift@^1.0.0:
+  version "1.0.0"
+  resolved "http://registry.npm.taobao.org/stream-shift/download/stream-shift-1.0.0.tgz#d5c752825e5367e786f78e18e445ea223a155952"
 
 streamsearch@0.1.2:
   version "0.1.2"
@@ -3786,7 +3846,7 @@ thenify-all@^1.0.0:
   dependencies:
     any-promise "^1.0.0"
 
-through2@^2.0.3:
+through2@^2.0.1, through2@^2.0.2, through2@^2.0.3:
   version "2.0.3"
   resolved "http://registry.npm.taobao.org/through2/download/through2-2.0.3.tgz#0004569b37c7c74ba39c43f3ced78d1ad94140be"
   dependencies:
@@ -4118,3 +4178,11 @@ ypkgfiles@^1.5.0:
     is-type-of "^1.0.0"
     resolve-files "^1.0.0"
     yargs "^7.0.1"
+
+zlogger@^1.1.0:
+  version "1.1.0"
+  resolved "http://registry.npm.taobao.org/zlogger/download/zlogger-1.1.0.tgz#bc0d4a1a50d88b4e027636060c7a23682754744e"
+  dependencies:
+    pumpify "^1.3.5"
+    split2 "^2.1.0"
+    through2 "^2.0.1"
