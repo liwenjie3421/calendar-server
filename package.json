@@ -10,7 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "egg": "^2.2.0"
+    "egg": "^2.2.0",
+    "egg-cors": "^2.0.0"
   },
   "devDependencies": {
     "egg-bin": "^4.3.7"

@@ -48,9 +48,13 @@ class HomeController extends Controller {
         }
 
         dbdata[monthPicker] = info;
-        const r = fs.writeFileSync(filepath, JSON.stringify(dbdata), {encoding: 'utf-8'});
+        try {
+            fs.writeFileSync(filepath, JSON.stringify(dbdata), {encoding: 'utf-8'});   
+            this.returnResult(true);
+        } catch (error) {
+            this.noResult();
+        }
 
-        this.returnResult(r);
     }
 
     noValidateParams(s) {
