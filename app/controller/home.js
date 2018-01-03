@@ -23,7 +23,7 @@ class HomeController extends Controller {
     }
 
     async index() {
-        returnResult('hello world');
+        this.returnResult('hello world');
     }
 
     getCalendarInfo(monthPicker) {
