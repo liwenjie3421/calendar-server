@@ -22,10 +22,6 @@ class HomeController extends Controller {
         }
     }
 
-    async index() {
-        this.returnResult('hello world');
-    }
-
     getCalendarInfo(monthPicker) {
         if (!monthPicker) {
             noValidateParams(monthPicker)
