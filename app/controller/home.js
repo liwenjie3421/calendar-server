@@ -25,7 +25,7 @@ class HomeController extends Controller {
 
     getCalendarInfo(monthPicker) {
         if (!monthPicker) {
-            noValidateParams(monthPicker)
+            this.noValidateParams(monthPicker)
             return;
         }
         // 有选择日期
