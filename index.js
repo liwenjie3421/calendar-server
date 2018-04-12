@@ -2,12 +2,16 @@ const Koa = require('koa')
 const Router = require('koa-router')
 const KoaBody = require('koa-body')
 
+const routes = require('./app/routes')
+
 const app = new Koa()
 const router = new Router()
 const koaBody = new KoaBody()
 
-router.post('/', koaBody, (ctx, next) => {
-  ctx.body = 'ctx.request.body'
+Object.keys(routes).map(route => {
+  const routeObj = routes[route]
+  const {method, cb} = routeObj
+  router[method](route, koaBody, cb)
 })
 
 app.use(router.routes())
