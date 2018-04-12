@@ -1,8 +1,15 @@
-const Home = require('./home')
+const getCalendarInfo = require('./getCalendarInfo')
+const saveCalendarInfo = require('./saveCalendarInfo')
 
-module.exports = {
-  '/': {
+module.exports = [
+  {
+    route: '/api/calendarInfo',
+    method: 'get',
+    cb: getCalendarInfo
+  },
+  {
+    route: '/api/calendarInfo',
     method: 'post',
-    cb: Home
+    cb: saveCalendarInfo
   }
-}
+]
