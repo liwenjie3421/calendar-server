@@ -1,0 +1,14 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true,
+        "node": true
+    },
+    "extends": ["standard"],
+    "rules": {
+        "one-var": [2, { "let": "never", "const": "never" }],
+        "no-var": 1,
+        "no-label-var": 2
+    }
+}
