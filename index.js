@@ -8,9 +8,8 @@ const app = new Koa()
 const router = new Router()
 const koaBody = new KoaBody()
 
-Object.keys(routes).map(route => {
-  const routeObj = routes[route]
-  const {method, cb} = routeObj
+routes.map(routeObj => {
+  const {method, cb, route} = routeObj
   router[method](route, koaBody, cb)
 })
 
