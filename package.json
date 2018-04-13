@@ -3,8 +3,12 @@
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
   "scripts": {
-    "dev": "hotnode index.js"
+    "dev": "hotnode index.js",
+    "test": "mocha"
   },
   "author": "",
   "license": "ISC",

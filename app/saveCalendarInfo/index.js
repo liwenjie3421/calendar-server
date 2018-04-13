@@ -9,6 +9,7 @@ module.exports = async ctx => {
   try {
     db.connectDataBase()
     if (batch) { // 批量
+      if (!batchData) throw new Error('batchData不能为空')
       await Promise.all(batchData.map(data => {
         return insertEvent(obj2Arr(data, eventKey))
       }))
@@ -39,7 +40,6 @@ async function insertEvent (params) {
       placeholder += ',?'
     }
   })
-  console.log(`insert into ${getTableName('event')} (${eventKey.join(',')}) values (${placeholder})`, params)
   await db.sql(`insert into ${getTableName('event')} (${eventKey.join(',')}) values (${placeholder})`, params)
 }
 
