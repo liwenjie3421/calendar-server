@@ -16,8 +16,10 @@
     "sqlite3": "^4.0.0"
   },
   "devDependencies": {
+    "chai": "^4.1.2",
     "eslint": "^4.19.1",
     "hotnode": "^0.0.8",
+    "mocha": "^5.1.0",
     "standard": "^11.0.1"
   }
 }
