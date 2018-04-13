@@ -7,7 +7,7 @@ module.exports = async ctx => {
   const { batch, batchData, data } = ctx.request.body
 
   try {
-    db.connectDataBase()
+    await db.connectDataBase()
     if (batch) { // 批量
       if (!batchData) throw new Error('batchData不能为空')
       await Promise.all(batchData.map(data => {

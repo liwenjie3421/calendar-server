@@ -74,25 +74,25 @@ describe('saveEvent', () => {
                 msg: '批量添加成功'
             })
         })
-        // it('存储失败', async() => {
-        //     const ctx = {
-        //         request: {
-        //             body: {
-        //                 data: {
-        //                     startTime: Number(new Date()),
-        //                     endTime: Number(new Date()),
-        //                     color: '#cccccc',
-        //                     event: 'c'
-        //                 }
-        //             }
-        //         }
-        //     }
-        //     await saveCalendarInfo(ctx);
-        //     assert.deepEqual(ctx.body, {
-        //         "code": -1,
-        //         "msg": "添加失败，原因：Error: Error: SQLITE_CONSTRAINT: NOT NULL constraint failed: event_dev.t" +
-        //                 "eacher"
-        //     })
-        // })
+        it('存储失败', async() => {
+            const ctx = {
+                request: {
+                    body: {
+                        batch: true,
+                        data: {
+                            startTime: Number(new Date()),
+                            endTime: Number(new Date()),
+                            color: '#cccccc',
+                            event: 'c'
+                        }
+                    }
+                }
+            }
+            await saveCalendarInfo(ctx);
+            assert.deepEqual(ctx.body, {
+                "code": -1,
+                "msg": "批量添加失败，原因：Error: batchData不能为空"
+            })
+        })
     })
 })
