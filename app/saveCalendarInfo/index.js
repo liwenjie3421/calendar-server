@@ -63,7 +63,6 @@ async function insertEvent (params) {
  * 根据日期，判断数据是否已有生效的, 如果有，返回id
  */
 async function isActive (date) {
-  console.log('date', date)
   const ids = await db.sql(`select id from ${getTableName('event')} where date=? and isActive=1`, date, 'all')
   return ids
 }
