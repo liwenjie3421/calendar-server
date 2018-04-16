@@ -3,6 +3,14 @@ const config = require('../../config')
 
 const eventKey = ['startTime', 'endTime', 'teacher', 'color', 'event']
 
+/**
+ *
+ * @param {boolean} ctx.request.body.batch 是否是批量
+ * @param {{}} ctx.request.body.batchData 批量数据
+ * @param {{}} ctx.request.body.data 单次数据
+ *
+ * 数据格式： 'startTime': number, 'endTime':number , 'teacher': string, 'color': string, 'event': string
+ */
 module.exports = async ctx => {
   const { batch, batchData, data } = ctx.request.body
 
