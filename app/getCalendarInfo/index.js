@@ -20,7 +20,7 @@ module.exports = async ctx => {
   db.close()
 }
 
-async function search ({startTime, endTime}) {
-  const data = await db.sql(`select * from ${getTableName('event')} where startTime >= ? and endTime <= ?`, [startTime, endTime], 'all')
+async function search ({startDate, endDate}) {
+  const data = await db.sql(`select * from ${getTableName('event')} where date >= date(?) and date <= date(?) and isActive=1`, [startDate, endDate], 'all')
   return data
 }

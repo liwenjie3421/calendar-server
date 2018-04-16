@@ -2,7 +2,7 @@ const {assert} = require('chai')
 const saveCalendarInfo = require('../app/saveCalendarInfo')
 const getCalendarInfo = require('../app/getCalendarInfo')
 
-describe('saveEvent', () => {
+describe('saveOrGetEvent', () => {
     describe('存储一条数据', () => {
         it('存储成功', async() => {
             const ctx = {
@@ -91,17 +91,18 @@ describe('saveEvent', () => {
             })
         })
     })
+    describe('读数据', ()=>{
+        it('读数据', async() => {
+            const ctx = {
+                query: {
+                    startDate: '2018-01-01',
+                    endDate: '2018-04-15'
+                }
+            }
+            await getCalendarInfo(ctx)
+            assert.equal(ctx.body.code, 1)
+            assert.equal(Object.prototype.toString.call(ctx.body.msg), '[object Array]')
+            assert.equal(!!ctx.body.msg.length, true)
+        })
+    })
 })
-
-// describe('根据日期读取数据', () => {
-//     it('读数据', async () => {
-//         const ctx = {
-//             query: {
-//                 startdate: 0,
-//                 enddate: 1523614046120
-//             }
-//         }
-//         await getCalendarInfo(ctx);
-//         assert.equal(ctx.body.code, 1)
-//     })
-// })
