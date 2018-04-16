@@ -3,7 +3,7 @@ const utils = require('../../lib/utils')
 
 const {getTableName} = utils
 
-const eventKey = ['startTime', 'endTime', 'teacher', 'color', 'event']
+const eventKey = ['date', 'teacher', 'color', 'event']
 
 /**
  *
@@ -11,7 +11,7 @@ const eventKey = ['startTime', 'endTime', 'teacher', 'color', 'event']
  * @param {{}} ctx.request.body.batchData 批量数据
  * @param {{}} ctx.request.body.data 单次数据
  *
- * 数据格式： 'startTime': number, 'endTime':number , 'teacher': string, 'color': string, 'event': string
+ * 数据格式： 'date': string , 'teacher': string, 'color': string, 'event': string
  */
 module.exports = async ctx => {
   const { batch, batchData, data } = ctx.request.body
@@ -50,7 +50,29 @@ async function insertEvent (params) {
       placeholder += ',?'
     }
   })
+  // date的index，在params中就是date
+  // 如果是false就是没有值，直接插入
+  const ids = await isActive(params[eventKey.indexOf('date')])
+  if (ids && ids.length) {
+    await inActiveAll(ids)
+  }
   await db.sql(`insert into ${getTableName('event')} (${eventKey.join(',')}) values (${placeholder})`, params)
+}
+
+/**
+ * 根据日期，判断数据是否已有生效的, 如果有，返回id
+ */
+async function isActive (date) {
+  console.log('date', date)
+  const ids = await db.sql(`select id from ${getTableName('event')} where date=? and isActive=1`, date, 'all')
+  return ids
+}
+/**
+ * 将某一条记录置为无效
+ * @param {number} id
+ */
+async function inActiveAll (ids) {
+  await Promise.all(ids.map(item => db.sql(`update ${getTableName('event')} set isActive=0 where id=?`, item.id)))
 }
 
 /**
