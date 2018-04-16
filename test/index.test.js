@@ -1,5 +1,6 @@
 const {assert} = require('chai')
 const saveCalendarInfo = require('../app/saveCalendarInfo')
+const getCalendarInfo = require('../app/getCalendarInfo')
 
 describe('saveEvent', () => {
     describe('存储一条数据', () => {
@@ -94,5 +95,18 @@ describe('saveEvent', () => {
                 "msg": "批量添加失败，原因：Error: batchData不能为空"
             })
         })
+    })
+})
+
+describe('根据日期读取数据', () => {
+    it('读数据', async () => {
+        const ctx = {
+            query: {
+                startTime: 0,
+                endTime: 1523614046120
+            }
+        }
+        await getCalendarInfo(ctx);
+        assert.equal(ctx.body.code, 1)
     })
 })
