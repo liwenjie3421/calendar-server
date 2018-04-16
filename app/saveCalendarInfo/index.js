@@ -1,5 +1,7 @@
 const db = require('../../lib/db')
-const config = require('../../config')
+const utils = require('../../lib/utils')
+
+const {getTableName} = utils
 
 const eventKey = ['startTime', 'endTime', 'teacher', 'color', 'event']
 
@@ -49,14 +51,6 @@ async function insertEvent (params) {
     }
   })
   await db.sql(`insert into ${getTableName('event')} (${eventKey.join(',')}) values (${placeholder})`, params)
-}
-
-/**
- * 不同环境返回不同表
- * @param {string} tableName
- */
-function getTableName (tableName) {
-  return tableName + (config.env === 'production' ? '' : '_dev')
 }
 
 /**
