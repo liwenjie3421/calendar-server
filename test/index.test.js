@@ -10,8 +10,8 @@ describe('saveOrGetEvent', () => {
                     body: {
                         data: {
                             date: '2018-01-02',
-                            teacher: '胡欣',
-                            color: '#cccccc',
+                            // teacher: '胡欣',
+                            // color: '#cccccc',
                             event: 'c'
                         }
                     }
@@ -28,9 +28,7 @@ describe('saveOrGetEvent', () => {
                 request: {
                     body: {
                         data: {
-                            date: '2018-01-02',
-                            color: '#cccccc',
-                            event: 'c'
+                            date: '2018-01-02'
                         }
                     }
                 }
@@ -38,8 +36,7 @@ describe('saveOrGetEvent', () => {
             await saveCalendarInfo(ctx);
             assert.deepEqual(ctx.body, {
                 "code": -1,
-                "msg": "添加失败，原因：Error: Error: SQLITE_CONSTRAINT: NOT NULL constraint failed: event_dev.t" +
-                        "eacher"
+                "msg": "添加失败，原因：Error: Error: SQLITE_CONSTRAINT: NOT NULL constraint failed: event_dev.event"
             })
         })
     })
